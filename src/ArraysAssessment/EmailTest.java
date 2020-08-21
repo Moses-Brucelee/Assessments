@@ -1,4 +1,5 @@
 package ArraysAssessment;
+
 /**
  * There are 4 parts to this test. See the description of each method below.
  *
@@ -18,7 +19,7 @@ public class EmailTest
 		String result = "";
 		for (int i = 0; i < numbers.length; i++)
 		{
-			result += numbers[ i ] + ", ";
+			result += numbers[i] + (i < numbers.length-1 ? ", " :"");
 		}
 		return result;
 	}
@@ -31,9 +32,9 @@ public class EmailTest
 	private static String arrayToString2( int[] numbers )
 	{
 		String result = "";
-		for (int i = 0; i < numbers.length; i++)
+		for (int number : numbers)
 		{
-			result += numbers[ i ] + ", ";
+			result += number + (result.length() < (numbers.toString().length()) ? ", " : "");
 		}
 		return result;
 	}
@@ -47,7 +48,12 @@ public class EmailTest
 	 */
 	private static int[] reverseArray1( int[] numbers )
 	{
-		int[] result = new int[ numbers.length ];
+		int[] result = new int[numbers.length];
+		int j = numbers.length;
+		for (int i = 0; i<numbers.length ; i++) {
+			result[j-1] = numbers[i];
+			j = j-1;
+		}
 		return result;
 	}
 
@@ -58,6 +64,17 @@ public class EmailTest
 	 */
 	private static void reverseArray2( int[] numbers )
 	{
+		int left = 0;
+		int right = numbers.length-1;
+		
+		while(left < right) {
+			int temp = numbers[left];
+			numbers[left] = numbers[right];
+			numbers[right] = temp;
+			
+			left++;
+			right--;
+		}
 	}
 
 	/**
