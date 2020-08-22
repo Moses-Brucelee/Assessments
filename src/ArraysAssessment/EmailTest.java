@@ -5,7 +5,7 @@ package ArraysAssessment;
  *
  * Do not use any libraries (e.g. Apache Commons). You may however use any standard Java classes you like.
  */
-public class EmailTest1
+public class EmailTest
 {
 	/**
 	 * This method converts an array of ints {1, 2, 3, 4, 5} into a comma-separated String "1, 2, 3, 4, 5".
