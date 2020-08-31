@@ -15,7 +15,7 @@ public class CheckAnagram {
 		return sorted;
 	}
 
-	private static ArrayList<String> chechAnagram(String[] a) {
+	private static ArrayList<String> checkAnagram(String[] a) {
 
 		ArrayList<String> output = null;
 		Map<String, String> map = new HashMap<>();
@@ -23,7 +23,7 @@ public class CheckAnagram {
 			if (map.containsKey(sortString(a[i]))) {
 				continue;
 			} else {
-				map.put(sortString(a[i]), a[i]);
+				map.put(sortString(a[i]), a[i].toLowerCase());
 			}
 		}
 		output = new ArrayList<>(map.values());
@@ -32,8 +32,8 @@ public class CheckAnagram {
 
 	public static void main(String[] args) {
 
-		String a[] = { "anagramm", "marganaa", "cat", "act" };
-		ArrayList<String> output = chechAnagram(a);
+		String input[] = { "anagramm", "marganaa", "anagramm", "marganaa","Hello","hello","CAT","ACT","TAC" };
+		ArrayList<String> output = checkAnagram(input);
 		Collections.sort(output);
 		System.out.println(output);
 
